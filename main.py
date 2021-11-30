@@ -9,7 +9,7 @@ from kivymd.uix.picker import MDTimePicker
 import datetime
 
 
-class ConverterApp(MDApp):
+class WorktimeApp(MDApp):
     def set_time(self, args):
         now = datetime.datetime.now()
         time_dialog = MDTimePicker()
@@ -19,7 +19,7 @@ class ConverterApp(MDApp):
 
 
     def get_time(self, instance, time):
-        hours = 8
+        hours = 8.3
         delta = datetime.timedelta(hours = hours)
         resultTime = (datetime.datetime.combine(datetime.date(1,1,1),time) + delta).time()
         self.resultTime.text = str(resultTime) + ' Uhr'
@@ -32,7 +32,10 @@ class ConverterApp(MDApp):
 
         # Logo
         screen.add_widget(Image(
-            source="logos/1.png",
+            size_hint_y=None,
+            width= 100,
+            allow_stretch= True,
+            source="logo.png",
             pos_hint={"center_x": 0.5, "center_y": 0.7}
         ))
 
@@ -40,6 +43,7 @@ class ConverterApp(MDApp):
         self.user_label = MDLabel(
             text="Klicken Sie auf den Button um Ihren Feierabend zu berechnen.",
             halign="center",
+            font_size=20,
             pos_hint={"center_x": 0.5, "center_y": 0.5},
             theme_text_color="Primary"
         )
@@ -74,4 +78,4 @@ class ConverterApp(MDApp):
 
 
 if __name__ == '__main__':
-    ConverterApp().run()
+    WorktimeApp().run()
