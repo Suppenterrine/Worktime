@@ -41,7 +41,7 @@ class WorktimeApp(MDApp):
 
         # collect user input
         self.user_label = MDLabel(
-            text="Klicken Sie auf den Button um Ihren Feierabend zu berechnen.",
+            text="Klicken Sie auf den Button\num Ihren Feierabend zu berechnen.",
             halign="center",
             font_size=20,
             pos_hint={"center_x": 0.5, "center_y": 0.5},
